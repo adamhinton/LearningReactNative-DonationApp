@@ -5,7 +5,7 @@ import globalStyle from '../../../assets/styles/GlobalStyle';
 
 const Home = () => {
   return (
-    <SafeAreaView style={globalStyle.backgroundWhite}>
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <View>
         <Text>Hello World!!</Text>
       </View>
