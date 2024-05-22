@@ -1,12 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
+import {Text, View} from 'react-native';
+import style from './style';
 
-type Props = {};
+type Props = {
+  // title empty by default
+  title?: string;
+};
 
 const Header = (props: Props) => {
-  const {} = props;
+  const {title} = props;
 
-  return null;
+  return (
+    <View>
+      {/* title empty by default */}
+      <Text style={style.title1}>{title ?? 'fdsfas'}</Text>
+    </View>
+  );
 };
 
 export default Header;
