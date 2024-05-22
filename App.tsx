@@ -1,13 +1,11 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import MainNavigation from './Navigation/MainNavigation';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = (): React.JSX.Element => {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <Text>Hello world</Text>
-      </SafeAreaView>
+      <MainNavigation />
     </NavigationContainer>
   );
 };
