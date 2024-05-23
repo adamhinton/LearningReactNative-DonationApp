@@ -1,5 +1,6 @@
 import React from 'react';
 import {Pressable, Text} from 'react-native';
+import style from './style';
 
 type Props = {
   title: string;
@@ -11,8 +12,13 @@ const Button = (props: Props) => {
   const {isDisabled} = props;
 
   return (
-    <Pressable disabled={isDisabled}>
-      <Text>{props.title}</Text>
+    <Pressable
+      disabled={isDisabled}
+      style={style.button}
+      onPress={() => {
+        console.log('pressed');
+      }}>
+      <Text style={style.title}>{props.title}</Text>
     </Pressable>
   );
 };
