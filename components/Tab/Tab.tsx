@@ -15,11 +15,13 @@ const Tab = (props: Props) => {
   return (
     <Pressable
       disabled={isInactive}
-      style={[style.button, isDisabled && style.disabled]}
+      style={[style.tab, isInactive && style.inactiveTab]}
       onPress={() => {
         onPress && onPress();
       }}>
-      <Text style={style.title}>{props.title}</Text>
+      <Text style={[style.title, isInactive && style.inactiveTitle]}>
+        {props.title}
+      </Text>
     </Pressable>
   );
 };
