@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {Pressable, Text} from 'react-native';
 import style from './style';
 
@@ -12,6 +12,9 @@ type Props = {
 const Tab = (props: Props) => {
   const {isInactive, onPress} = props;
 
+  const [width, setWidth] = useState(0);
+  const textRef = useRef(null);
+
   return (
     <Pressable
       disabled={isInactive}
@@ -19,7 +22,9 @@ const Tab = (props: Props) => {
       onPress={() => {
         onPress && onPress();
       }}>
-      <Text style={[style.title, isInactive && style.inactiveTitle]}>
+      <Text
+        ref={textRef}
+        style={[style.title, isInactive && style.inactiveTitle]}>
         {props.title}
       </Text>
     </Pressable>
