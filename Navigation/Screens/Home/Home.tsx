@@ -6,7 +6,7 @@ import Search from '../../../components/Search/Search';
 const Home = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <Search />
+      <Search onSearch={val => console.log('val:', val)} />
     </SafeAreaView>
   );
 };
