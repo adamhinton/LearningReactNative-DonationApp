@@ -12,13 +12,7 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   return (
-    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <Header title={'Azzahri A.'} type={1} />
-
-      <Tab title={'Highlight'} isInactive={true} />
-      <Badge title={'Environment'} />
-      <FontAwesomeIcon icon={faSearch} />
-    </SafeAreaView>
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]} />
   );
 };
 
