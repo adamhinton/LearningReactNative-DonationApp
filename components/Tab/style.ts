@@ -24,7 +24,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
   },
   inactiveTitle: {
-    color: '79869F',
+    color: '#79869F',
   },
 });
 

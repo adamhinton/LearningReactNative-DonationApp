@@ -12,7 +12,7 @@ const Home = () => {
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <Header title={'Azzahri A.'} type={1} />
 
-      <Tab title={'Highlight'} />
+      <Tab title={'Highlight'} isInactive={true} />
     </SafeAreaView>
   );
 };
