@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Pressable, Text} from 'react-native';
+import {Text, View} from 'react-native';
 import style from './style';
 import {horizontalScale} from '../../assets/styles/scaling';
 
@@ -17,7 +17,7 @@ const Badge = (props: Props) => {
   };
 
   return (
-    <Pressable style={[style.badge, tabWidth]}>
+    <View style={[style.badge, tabWidth]}>
       <Text
         onTextLayout={e => {
           // set to width of title
@@ -27,7 +27,7 @@ const Badge = (props: Props) => {
         style={style.title}>
         {props.title}
       </Text>
-    </Pressable>
+    </View>
   );
 };
 
