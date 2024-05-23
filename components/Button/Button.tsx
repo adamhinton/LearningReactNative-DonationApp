@@ -14,7 +14,7 @@ const Button = (props: Props) => {
   return (
     <Pressable
       disabled={isDisabled}
-      style={style.button}
+      style={[style.button, isDisabled && style.disabled]}
       onPress={() => {
         console.log('pressed');
       }}>

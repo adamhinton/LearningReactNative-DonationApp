@@ -18,8 +18,10 @@ const style = StyleSheet.create({
     fontWeight: '500',
     lineHeight: scaleFontSize(15),
     color: 'white',
-
     textAlign: 'center',
+  },
+  disabled: {
+    opacity: 0.5,
   },
 });
 

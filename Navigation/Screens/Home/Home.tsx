@@ -11,6 +11,7 @@ const Home = () => {
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <Header title={'Azzahri A.'} type={1} />
       <Button title={'Donate'} />
+      <Button title={'Donate'} isDisabled={true} />
     </SafeAreaView>
   );
 };
