@@ -7,6 +7,7 @@ type Props = {
   title?: string;
   // type defaults to 1
   type: number;
+  color?: string;
 };
 
 const Header = (props: Props) => {
@@ -29,7 +30,15 @@ const Header = (props: Props) => {
   return (
     <View>
       {/* title empty by default */}
-      <Text style={styleToApply()}>{title ?? 'fdsfas'}</Text>
+      <Text
+        style={[
+          styleToApply(),
+          props.color && {
+            color: props.color,
+          },
+        ]}>
+        {title ?? 'fdsfas'}
+      </Text>
     </View>
   );
 };
