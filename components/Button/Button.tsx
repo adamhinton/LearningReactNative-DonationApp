@@ -6,17 +6,18 @@ type Props = {
   title: string;
   // isDisabled default false
   isDisabled?: boolean;
+  onPress?: Function;
 };
 
 const Button = (props: Props) => {
-  const {isDisabled} = props;
+  const {isDisabled, onPress} = props;
 
   return (
     <Pressable
       disabled={isDisabled}
       style={[style.button, isDisabled && style.disabled]}
       onPress={() => {
-        console.log('pressed');
+        onPress && onPress();
       }}>
       <Text style={style.title}>{props.title}</Text>
     </Pressable>
