@@ -17,11 +17,21 @@ const SingleDonationItem = (props: Props) => {
   return (
     <View>
       <View>
-        <Badge title={badgeTitle} />
-        <Image src={uri} style={style.image} />
+        <View style={style.badge}>
+          <Badge title={badgeTitle} />
+        </View>
+        <Image src={uri} style={style.image} resizeMode="contain" />
       </View>
-      <Header title={donationTitle} type={3} />
-      <Header title={`$${String(price.toFixed(2))}`} type={3} color="#156CF7" />
+      <View style={style.donationInformation}>
+        <Header title={donationTitle} type={3} />
+        <View style={style.price}>
+          <Header
+            title={`$${String(price.toFixed(2))}`}
+            type={3}
+            color="#156CF7"
+          />
+        </View>
+      </View>
     </View>
   );
 };
