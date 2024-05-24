@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       {/* <Search onSearch={val => console.log('val:', val)} /> */}
+      {/* Two SDIs */}
       <View
         style={{
           flexDirection: 'row',
