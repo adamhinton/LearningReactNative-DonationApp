@@ -21,6 +21,7 @@ const SingleDonationItem = (props: Props) => {
         <Image src={uri} style={style.image} />
       </View>
       <Header title={donationTitle} type={3} />
+      <Header title={`$${String(price.toFixed(2))}`} type={3} color="#156CF7" />
     </View>
   );
 };
