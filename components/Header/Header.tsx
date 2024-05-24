@@ -30,14 +30,8 @@ const Header = (props: Props) => {
   return (
     <View>
       {/* title empty by default */}
-      <Text
-        style={[
-          styleToApply(),
-          props.color && {
-            color: props.color,
-          },
-        ]}>
-        {title ?? 'fdsfas'}
+      <Text style={[styleToApply(), props.color ? {color: props.color} : null]}>
+        {title ?? ''}
       </Text>
     </View>
   );
