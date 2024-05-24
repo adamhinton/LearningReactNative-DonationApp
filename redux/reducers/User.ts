@@ -30,4 +30,4 @@ export const User = createSlice({
 
 export const {updateFirstName, updateLastName, updateUserId} = User.actions;
 
-export default User;
+export default User.reducer;
