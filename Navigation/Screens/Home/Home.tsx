@@ -6,11 +6,13 @@ import {useSelector} from 'react-redux';
 import {RootState} from '../../../redux/store';
 
 const Home = () => {
-  const user = useSelector((state: RootState) => state.user.firstName);
+  const user = useSelector((state: RootState) => state.user);
+
+  const {firstName, lastName} = user;
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <Header title={'Nata'} type={1} />
+      <Header title={`${firstName} ${lastName}`} type={1} />
     </SafeAreaView>
   );
 };
