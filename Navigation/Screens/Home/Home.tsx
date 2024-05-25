@@ -15,12 +15,7 @@ const Home = () => {
   const {firstName, lastName} = user;
 
   return (
-    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <Header title={`${firstName} ${lastName}`} type={1} />
-      <Pressable onPress={() => dispatch(updateFirstName('N'))}>
-        <Text>Change first name</Text>
-      </Pressable>
-    </SafeAreaView>
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]} />
   );
 };
 
