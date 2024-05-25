@@ -1,11 +1,10 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
-import Header from '../../../components/Header/Header';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../../redux/store';
-import {Pressable, Text} from 'react-native';
-import {updateFirstName} from '../../../redux/reducers/User';
+import {ScrollView, Text, View} from 'react-native';
+import style from './style';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -15,7 +14,13 @@ const Home = () => {
   const {firstName, lastName} = user;
 
   return (
-    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]} />
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={style.header}>
+          <Text style={style.headerIntroText}>Hello, </Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
