@@ -8,7 +8,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 const App = (): React.JSX.Element => {
   return (
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
+      <PersistGate persistor={persistor} loading={null}>
         <NavigationContainer>
           <MainNavigation />
         </NavigationContainer>
