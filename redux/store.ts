@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {combineReducers} from 'redux';
 import User from './reducers/User';
 import {configureStore} from '@reduxjs/toolkit';
