@@ -42,12 +42,11 @@ const Home = () => {
         <View style={style.searchBox}>
           <Search />
         </View>
-        <Pressable>
+        <Pressable style={style.highlightedImageContainer}>
           <Image
+            style={style.highlightedImage}
             source={require('../../../assets/images/highlighted_image.png')}
             resizeMode="contain"
-            width={50}
-            height={50}
           />
         </Pressable>
       </ScrollView>
