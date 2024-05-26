@@ -6,7 +6,7 @@ import style from './style';
 import {scaleFontSize} from '../../assets/styles/scaling';
 
 type Props = {
-  onSearch: (value: string) => void;
+  onSearch?: (value: string) => void;
 };
 
 const Search = (props: Props) => {
@@ -17,7 +17,7 @@ const Search = (props: Props) => {
 
   const handleSearch = (value: string) => {
     setSearch(value);
-    onSearch(value);
+    onSearch && onSearch(value);
   };
 
   const handleFocus = () => {

@@ -9,6 +9,9 @@ const style = StyleSheet.create({
   header: {
     marginTop: verticalScale(20),
     marginHorizontal: horizontalScale(24),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   headerIntroText: {
     fontFamily: 'Inter',
@@ -19,6 +22,15 @@ const style = StyleSheet.create({
   },
   username: {
     marginTop: verticalScale(5),
+  },
+  profileImage: {
+    width: horizontalScale(50),
+    height: verticalScale(50),
+  },
+
+  searchBox: {
+    marginHorizontal: horizontalScale(24),
+    marginTop: verticalScale(20),
   },
 });
 
