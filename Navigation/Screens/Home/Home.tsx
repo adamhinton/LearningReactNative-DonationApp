@@ -3,7 +3,14 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../../redux/store';
-import {Image, ScrollView, Text, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
 import style from './style';
 import Header from '../../../components/Header/Header';
 import Search from '../../../components/Search/Search';
@@ -35,6 +42,14 @@ const Home = () => {
         <View style={style.searchBox}>
           <Search />
         </View>
+        <Pressable>
+          <Image
+            source={require('../../../assets/images/highlighted_image.png')}
+            resizeMode="contain"
+            width={50}
+            height={50}
+          />
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
