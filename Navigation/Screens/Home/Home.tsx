@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import {useDispatch, useSelector} from 'react-redux';
@@ -9,7 +10,10 @@ import Header from '../../../components/Header/Header';
 import Search from '../../../components/Search/Search';
 import {FlatList} from 'react-native-gesture-handler';
 import Tab from '../../../components/Tab/Tab';
-import {updateSelectedCategoryId} from '../../../redux/reducers/Categories';
+import {
+  Category,
+  updateSelectedCategoryId,
+} from '../../../redux/reducers/Categories';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -20,6 +24,9 @@ const Home = () => {
   console.log('categories:', categories);
 
   const {firstName, lastName, profileImage} = user;
+
+  const [categoryPage, setCategoryPage] = useState(1);
+  const [categoryList, setCategoryList] = useState<Category[]>([]);
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
@@ -55,7 +62,7 @@ const Home = () => {
           <FlatList
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            data={categories.categories}
+            data={categoryList}
             renderItem={({item}) => {
               return (
                 <View style={style.categoryItem} key={item.categoryId}>
