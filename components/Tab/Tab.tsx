@@ -6,12 +6,13 @@ import {horizontalScale} from '../../assets/styles/scaling';
 type Props = {
   title: string;
   // isDisabled default false
-  onPress?: Function;
+  onPress: Function;
   isInactive?: boolean;
+  tabId: number;
 };
 
 const Tab = (props: Props) => {
-  const {isInactive, onPress} = props;
+  const {isInactive, onPress, tabId} = props;
 
   const [width, setWidth] = useState(0);
   const textRef = useRef(null);
@@ -25,7 +26,7 @@ const Tab = (props: Props) => {
       disabled={isInactive}
       style={[style.tab, isInactive && style.inactiveTab, tabWidth]}
       onPress={() => {
-        onPress && onPress();
+        onPress(tabId);
       }}>
       <Text
         onTextLayout={e => {

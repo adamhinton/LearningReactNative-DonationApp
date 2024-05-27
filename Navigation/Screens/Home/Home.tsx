@@ -9,6 +9,7 @@ import Header from '../../../components/Header/Header';
 import Search from '../../../components/Search/Search';
 import {FlatList} from 'react-native-gesture-handler';
 import Tab from '../../../components/Tab/Tab';
+import {updateSelectedCategoryId} from '../../../redux/reducers/Categories';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -56,6 +57,9 @@ const Home = () => {
               return (
                 <View style={style.categoryItem} key={item.categoryId}>
                   <Tab
+                    onPress={(value: unknown) => {
+                      dispatch(updateSelectedCategoryId(value));
+                    }}
                     title={item.name}
                     isInactive={
                       item.categoryId !== categories.selectedCategoryId
