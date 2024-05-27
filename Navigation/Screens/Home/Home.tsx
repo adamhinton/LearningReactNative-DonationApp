@@ -48,6 +48,9 @@ const Home = () => {
             resizeMode="contain"
           />
         </Pressable>
+        <View style={style.categoryHeader}>
+          <Header title={'Select Category'} type={2} />
+        </View>
         <View style={style.categories}>
           <FlatList
             horizontal={true}

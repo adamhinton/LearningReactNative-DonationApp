@@ -48,6 +48,12 @@ const style = StyleSheet.create({
   categoryItem: {
     marginRight: horizontalScale(10),
   },
+
+  categoryHeader: {
+    marginHorizontal: horizontalScale(24),
+    marginBottom: verticalScale(16),
+    marginTop: verticalScale(6),
+  },
 });
 
 export default style;
