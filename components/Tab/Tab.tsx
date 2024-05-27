@@ -23,7 +23,6 @@ const Tab = (props: Props) => {
 
   return (
     <Pressable
-      disabled={isInactive}
       style={[style.tab, isInactive && style.inactiveTab, tabWidth]}
       onPress={() => {
         onPress(tabId);

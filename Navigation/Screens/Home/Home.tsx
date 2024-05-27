@@ -57,6 +57,7 @@ const Home = () => {
               return (
                 <View style={style.categoryItem} key={item.categoryId}>
                   <Tab
+                    tabId={item.categoryId}
                     onPress={(value: unknown) => {
                       dispatch(updateSelectedCategoryId(value));
                     }}
