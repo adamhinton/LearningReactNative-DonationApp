@@ -7,6 +7,8 @@ import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import style from './style';
 import Header from '../../../components/Header/Header';
 import Search from '../../../components/Search/Search';
+import {FlatList} from 'react-native-gesture-handler';
+import Tab from '../../../components/Tab/Tab';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -45,6 +47,25 @@ const Home = () => {
             resizeMode="contain"
           />
         </Pressable>
+        <View style={style.categories}>
+          <FlatList
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={categories.categories}
+            renderItem={({item}) => {
+              return (
+                <View style={style.categoryItem} key={item.categoryId}>
+                  <Tab
+                    title={item.name}
+                    isInactive={
+                      item.categoryId !== categories.selectedCategoryId
+                    }
+                  />
+                </View>
+              );
+            }}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
