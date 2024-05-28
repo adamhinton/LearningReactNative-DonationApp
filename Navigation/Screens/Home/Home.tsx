@@ -29,6 +29,21 @@ const Home = () => {
   const [categoryList, setCategoryList] = useState<Category[]>([]);
   const categoryPageSize = 4;
 
+  const pagination = (
+    items: Category[],
+    pageNumber: number,
+    pageSize: number,
+  ) => {
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    if (startIndex >= items.length) {
+      return [];
+    }
+
+    return items.slice(startIndex, endIndex);
+  };
+
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
