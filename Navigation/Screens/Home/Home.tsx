@@ -37,7 +37,7 @@ const Home = () => {
     );
     setCategoryPage(prev => prev + 1);
     setIsLoadingCategories(false);
-  }, []);
+  }, [categories.categories, categoryPage]);
 
   const pagination = (
     items: Category[],
