@@ -1,13 +1,13 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-type State = {
+export type UserState = {
   firstName: string;
   lastName: string;
   userId: number;
   profileImage: string;
 };
 
-const initialState: State = {
+const initialState: UserState = {
   firstName: 'Nata',
   lastName: 'Vacheishvili',
   userId: 1,

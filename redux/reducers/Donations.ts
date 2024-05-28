@@ -10,12 +10,12 @@ export type DonationItem = {
   price: string;
 };
 
-type InitialState = {
+export type DonationsState = {
   items: DonationItem[];
   selectedDonationId: number | null;
 };
 
-const initialState: InitialState = {
+const initialState: DonationsState = {
   items: [],
   selectedDonationId: null,
 };
@@ -23,7 +23,14 @@ const initialState: InitialState = {
 const Donations = createSlice({
   name: 'donations',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    resetDonations: () => {
+      return initialState;
+    },
+    updateSelectedDonationId: (state, action) => {
+      state.selectedDonationId = action.payload;
+    },
+  },
 });
 
 const items = [
@@ -228,3 +235,5 @@ const items = [
     price: '13.83',
   },
 ];
+
+export default Donations;

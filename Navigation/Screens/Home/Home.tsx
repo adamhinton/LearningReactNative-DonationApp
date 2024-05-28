@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../../redux/store';
 import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import style from './style';
 import Header from '../../../components/Header/Header';
@@ -13,6 +12,7 @@ import {
   Category,
   updateSelectedCategoryId,
 } from '../../../redux/reducers/Categories';
+import {RootState} from '../../../redux/store';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);

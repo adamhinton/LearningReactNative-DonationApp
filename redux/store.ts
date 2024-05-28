@@ -1,14 +1,22 @@
 import {combineReducers} from 'redux';
-import User from './reducers/User';
+import User, {UserState} from './reducers/User';
 import {configureStore} from '@reduxjs/toolkit';
 import {logger} from 'redux-logger';
 import {persistReducer, persistStore} from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Categories from './reducers/Categories';
+import Categories, {CategoriesState} from './reducers/Categories';
+import Donations, {DonationsState} from './reducers/Donations';
+
+export type RootState = {
+  user: UserState;
+  categories: CategoriesState;
+  donations: DonationsState;
+};
 
 const rootReducer = combineReducers({
   user: User,
   categories: Categories,
+  donations: Donations,
 });
 
 const configuration = {
@@ -27,8 +35,6 @@ const store = configureStore({
     }).concat(logger);
   },
 });
-
-export type RootState = ReturnType<typeof rootReducer>;
 
 export default store;
 export const persistor = persistStore(store);
