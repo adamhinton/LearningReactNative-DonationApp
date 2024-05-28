@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
@@ -20,19 +21,23 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const categories = useSelector((state: RootState) => state.categories);
-  console.log('categories:', categories);
 
   const {firstName, lastName, profileImage} = user;
 
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
+
+  const [isLoadingCategories, setIsLoadingCategories] = useState(false);
+
   const categoryPageSize = 4;
 
   useEffect(() => {
+    setIsLoadingCategories(true);
     setCategoryList(
       pagination(categories.categories, categoryPage, categoryPageSize),
     );
     setCategoryPage(prev => prev + 1);
+    setIsLoadingCategories(false);
   }, []);
 
   const pagination = (
