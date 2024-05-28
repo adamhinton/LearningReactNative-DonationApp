@@ -27,6 +27,7 @@ const Home = () => {
 
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
+  const categoryPageSize = 4;
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
