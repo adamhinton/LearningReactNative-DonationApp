@@ -82,6 +82,18 @@ const Home = () => {
         </View>
         <View style={style.categories}>
           <FlatList
+            onEndReachedThreshold={0.5}
+            onEndReached={() => {
+              let newData = pagination(
+                categories.categories,
+                categoryPage,
+                categoryPageSize,
+              );
+              if (newData.length > 0) {
+                setCategoryList(prevState => [...prevState, ...newData]);
+                setCategoryPage(prevState => prevState + 1);
+              }
+            }}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             data={categoryList}
