@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import {useDispatch, useSelector} from 'react-redux';
@@ -28,6 +27,13 @@ const Home = () => {
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
   const categoryPageSize = 4;
+
+  useEffect(() => {
+    setCategoryList(
+      pagination(categories.categories, categoryPage, categoryPageSize),
+    );
+    setCategoryPage(prev => prev + 1);
+  }, []);
 
   const pagination = (
     items: Category[],
