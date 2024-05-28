@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyle from '../../../assets/styles/GlobalStyle';
@@ -89,6 +88,10 @@ const Home = () => {
           <FlatList
             onEndReachedThreshold={0.5}
             onEndReached={() => {
+              if (isLoadingCategories) {
+                return;
+              }
+              setIsLoadingCategories(true);
               let newData = pagination(
                 categories.categories,
                 categoryPage,
@@ -98,6 +101,7 @@ const Home = () => {
                 setCategoryList(prevState => [...prevState, ...newData]);
                 setCategoryPage(prevState => prevState + 1);
               }
+              setIsLoadingCategories(false);
             }}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
