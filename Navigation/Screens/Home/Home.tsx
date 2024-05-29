@@ -21,6 +21,8 @@ const Home = () => {
 
   const categories = useSelector((state: RootState) => state.categories);
 
+  const donations = useSelector((state: RootState) => state.donations);
+
   const {firstName, lastName, profileImage} = user;
 
   const [categoryPage, setCategoryPage] = useState(1);
@@ -30,6 +32,8 @@ const Home = () => {
 
   const categoryPageSize = 4;
 
+  // console.log('donations:', donations);
+
   useEffect(() => {
     setIsLoadingCategories(true);
     setCategoryList(
@@ -37,7 +41,9 @@ const Home = () => {
     );
     setCategoryPage(prev => prev + 1);
     setIsLoadingCategories(false);
-  }, [categories.categories, categoryPage]);
+    // The suggested deps were causing infinite rerenders. Not sure why. Works fine this way and this is how the instructor did it
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const pagination = (
     items: Category[],

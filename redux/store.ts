@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {combineReducers} from 'redux';
 import User, {UserState} from './reducers/User';
 import {configureStore} from '@reduxjs/toolkit';
@@ -32,7 +33,8 @@ const store = configureStore({
   middleware: getDefaultMiddleware => {
     return getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(logger);
+    });
+    // .concat(logger);
   },
 });
 

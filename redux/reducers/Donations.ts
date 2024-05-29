@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {createSlice} from '@reduxjs/toolkit';
 
 export type DonationItem = {
@@ -14,24 +13,6 @@ export type DonationsState = {
   items: DonationItem[];
   selectedDonationId: number | null;
 };
-
-const initialState: DonationsState = {
-  items: [],
-  selectedDonationId: null,
-};
-
-const Donations = createSlice({
-  name: 'donations',
-  initialState: initialState,
-  reducers: {
-    resetDonations: () => {
-      return initialState;
-    },
-    updateSelectedDonationId: (state, action) => {
-      state.selectedDonationId = action.payload;
-    },
-  },
-});
 
 const items = [
   {
@@ -236,4 +217,24 @@ const items = [
   },
 ];
 
-export default Donations;
+const initialState: DonationsState = {
+  items: items,
+  selectedDonationId: null,
+};
+
+const Donations = createSlice({
+  name: 'donations',
+  initialState: initialState,
+  reducers: {
+    resetDonations: () => {
+      return initialState;
+    },
+    updateSelectedDonationId: (state, action) => {
+      state.selectedDonationId = action.payload;
+    },
+  },
+});
+
+export default Donations.reducer;
+
+export const {resetDonations, updateSelectedDonationId} = Donations.actions;
