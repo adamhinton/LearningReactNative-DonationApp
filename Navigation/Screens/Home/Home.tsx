@@ -14,6 +14,7 @@ import {
 } from '../../../redux/reducers/Categories';
 import {RootState} from '../../../redux/store';
 import {DonationItem} from '../../../redux/reducers/Donations';
+import SingleDonationItem from '../../../components/SingleDonationItem/SingleDonationitem';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -42,6 +43,7 @@ const Home = () => {
       value.categoryIds.includes(categories.selectedCategoryId),
     );
     setDonationItems(items);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categories.selectedCategoryId]);
 
   // console.log('donations:', donations);
@@ -142,6 +144,23 @@ const Home = () => {
             }}
           />
         </View>
+        {donationItems.length > 0 && (
+          <View style={style.donationItemsContainer}>
+            {donationItems.map(value => (
+              <SingleDonationItem
+                donationTitle={value.name}
+                uri={value.image}
+                badgeTitle={
+                  categories.categories.filter(
+                    val => val.categoryId === categories.selectedCategoryId,
+                  )[0].name
+                }
+                key={value.donationItemId}
+                price={parseFloat(value.price)}
+              />
+            ))}
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
