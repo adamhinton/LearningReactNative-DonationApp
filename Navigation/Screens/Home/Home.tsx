@@ -13,6 +13,7 @@ import {
   updateSelectedCategoryId,
 } from '../../../redux/reducers/Categories';
 import {RootState} from '../../../redux/store';
+import {DonationItem} from '../../../redux/reducers/Donations';
 
 const Home = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -24,6 +25,8 @@ const Home = () => {
   const donations = useSelector((state: RootState) => state.donations);
 
   const {firstName, lastName, profileImage} = user;
+
+  const [donationItems, setDonationItems] = useState<DonationItem[]>([]);
 
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState<Category[]>([]);
@@ -37,6 +40,7 @@ const Home = () => {
     const filteredItems = items.filter(value =>
       value.categoryIds.includes(categories.selectedCategoryId),
     );
+    setDonationItems(filteredItems);
   }, [categories.selectedCategoryId]);
 
   // console.log('donations:', donations);
