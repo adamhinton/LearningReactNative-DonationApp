@@ -36,11 +36,10 @@ const Home = () => {
   const categoryPageSize = 4;
 
   useEffect(() => {
-    const items = donations.items;
-    const filteredItems = items.filter(value =>
+    const items = donations.items.filter(value =>
       value.categoryIds.includes(categories.selectedCategoryId),
     );
-    setDonationItems(filteredItems);
+    setDonationItems(items);
   }, [categories.selectedCategoryId]);
 
   // console.log('donations:', donations);
