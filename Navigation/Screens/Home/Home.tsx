@@ -35,6 +35,8 @@ const Home = () => {
 
   const categoryPageSize = 4;
 
+  console.log('donationItems:', donationItems);
+
   useEffect(() => {
     const items = donations.items.filter(value =>
       value.categoryIds.includes(categories.selectedCategoryId),
