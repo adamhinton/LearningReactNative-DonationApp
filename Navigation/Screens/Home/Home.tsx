@@ -32,6 +32,13 @@ const Home = () => {
 
   const categoryPageSize = 4;
 
+  useEffect(() => {
+    const items = donations.items;
+    const filteredItems = items.filter(value =>
+      value.categoryIds.includes(categories.selectedCategoryId),
+    );
+  }, [categories.selectedCategoryId]);
+
   // console.log('donations:', donations);
 
   useEffect(() => {
