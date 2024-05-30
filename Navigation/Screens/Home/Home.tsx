@@ -157,6 +157,7 @@ const Home = () => {
                 }
                 key={value.donationItemId}
                 price={parseFloat(value.price)}
+                donationItemId={value.donationItemId}
               />
             ))}
           </View>

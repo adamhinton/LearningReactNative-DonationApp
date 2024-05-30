@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image, Pressable, View} from 'react-native';
 import style from './style';
 import Badge from '../Badge/Badge';
 import Header from '../Header/Header';
@@ -9,13 +9,23 @@ type Props = {
   badgeTitle: string;
   donationTitle: string;
   price: number;
+  onPress?: Function;
+  donationItemId: number;
 };
 
 const SingleDonationItem = (props: Props) => {
-  const {uri, badgeTitle, donationTitle, price} = props;
+  const {uri, badgeTitle, donationTitle, price, donationItemId} = props;
+
+  const onPress = props.onPress
+    ? props.onPress
+    : // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      (donationItemId2: number) => {};
 
   return (
-    <View>
+    <Pressable
+      onPress={() => {
+        onPress(onPress(donationItemId));
+      }}>
       <View>
         <View style={style.badge}>
           <Badge title={badgeTitle} />
@@ -32,7 +42,7 @@ const SingleDonationItem = (props: Props) => {
           />
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
