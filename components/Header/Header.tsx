@@ -8,10 +8,11 @@ type Props = {
   // type defaults to 1
   type: number;
   color?: string;
+  numberOfLines?: number;
 };
 
 const Header = (props: Props) => {
-  const {title} = props;
+  const {title, numberOfLines} = props;
 
   const styleToApply = () => {
     switch (props.type) {
@@ -30,7 +31,10 @@ const Header = (props: Props) => {
   return (
     <View>
       {/* title empty by default */}
-      <Text style={[styleToApply(), props.color ? {color: props.color} : null]}>
+      <Text
+        style={[styleToApply(), props.color ? {color: props.color} : null]}
+        // teacher used `numberOfLines : null` here; TS said that should be `undefined` instead of null
+        numberOfLines={numberOfLines ? numberOfLines : undefined}>
         {title ?? ''}
       </Text>
     </View>
