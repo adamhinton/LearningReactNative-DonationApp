@@ -16,7 +16,7 @@ type Props = {
 const SingleDonationItem = (props: Props) => {
   const {uri, badgeTitle, donationTitle, price, donationItemId} = props;
 
-  const onPress = props.onPress
+  const onPress: Function = props.onPress
     ? props.onPress
     : // eslint-disable-next-line @typescript-eslint/no-unused-vars
       (donationItemId2: number) => {};
@@ -24,27 +24,23 @@ const SingleDonationItem = (props: Props) => {
   return (
     <Pressable
       onPress={() => {
-        onPress(onPress(donationItemId));
+        onPress && onPress(donationItemId);
       }}>
       <View>
         <View style={style.badge}>
           <Badge title={badgeTitle} />
         </View>
-        <Image src={uri} style={style.image} resizeMode="contain" />
+        <Image resizeMode={'cover'} source={{uri: uri}} style={style.image} />
       </View>
       <View style={style.donationInformation}>
         <Header
           title={donationTitle}
           type={3}
-          color="#156CF7"
+          color={'#0A043C'}
           numberOfLines={1}
         />
         <View style={style.price}>
-          <Header
-            title={`$${String(price.toFixed(2))}`}
-            type={3}
-            color="#156CF7"
-          />
+          <Header title={'$' + price.toFixed(2)} type={3} color={'#156CF7'} />
         </View>
       </View>
     </Pressable>

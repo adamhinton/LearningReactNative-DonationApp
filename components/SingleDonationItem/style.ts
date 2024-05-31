@@ -6,8 +6,6 @@ const style = StyleSheet.create({
     width: horizontalScale(140),
     height: verticalScale(170),
     borderRadius: horizontalScale(20),
-    borderColor: 'blue',
-    borderWidth: 3,
   },
   badge: {
     position: 'absolute',
