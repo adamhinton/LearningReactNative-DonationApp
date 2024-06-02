@@ -9,7 +9,7 @@ type Props = {
 
 const BackButton = (props: Props) => {
   return (
-    <Pressable onPress={() => props.onPress}>
+    <Pressable onPress={() => props.onPress()}>
       <FontAwesomeIcon icon={faArrowLeft} />
     </Pressable>
   );

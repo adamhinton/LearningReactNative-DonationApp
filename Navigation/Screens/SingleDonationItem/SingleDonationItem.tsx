@@ -6,14 +6,14 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import BackButton from '../../../components/BackButton/BackButton';
 
-const SingleDonationItem = () => {
+const SingleDonationItem = ({navigation}) => {
   const donationItemInformation = useSelector(
     (state: RootState) => state.donations.selectedDonationInformation,
   );
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <BackButton />
+        <BackButton onPress={() => navigation.goBack()} />
       </ScrollView>
     </SafeAreaView>
   );
