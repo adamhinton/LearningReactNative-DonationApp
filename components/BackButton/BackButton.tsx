@@ -1,11 +1,18 @@
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import React from 'react';
 import {Pressable} from 'react-native';
 
-type Props = {};
+type Props = {
+  onPress: Function;
+};
 
 const BackButton = (props: Props) => {
-  const {} = props;
-  return <Pressable onPress={() => {}} />;
+  return (
+    <Pressable onPress={() => props.onPress}>
+      <FontAwesomeIcon icon={faArrowLeft} />
+    </Pressable>
+  );
 };
 
 export default BackButton;
