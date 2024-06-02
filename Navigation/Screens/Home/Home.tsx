@@ -13,7 +13,10 @@ import {
   updateSelectedCategoryId,
 } from '../../../redux/reducers/Categories';
 import {RootState} from '../../../redux/store';
-import {DonationItem} from '../../../redux/reducers/Donations';
+import {
+  DonationItem,
+  updateSelectedDonationId,
+} from '../../../redux/reducers/Donations';
 import SingleDonationItem from '../../../components/SingleDonationItem/SingleDonationitem';
 
 const Home = () => {
@@ -149,8 +152,9 @@ const Home = () => {
             {donationItems.map(value => (
               <View key={value.donationItemId} style={style.singleDonationItem}>
                 <SingleDonationItem
-                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                  onPress={(selectedDonationId: number) => {}}
+                  onPress={(selectedDonationId: number) => {
+                    dispatch(updateSelectedDonationId(selectedDonationId));
+                  }}
                   donationTitle={value.name}
                   uri={value.image}
                   badgeTitle={
