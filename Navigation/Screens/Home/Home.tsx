@@ -18,8 +18,9 @@ import {
   updateSelectedDonationId,
 } from '../../../redux/reducers/Donations';
 import SingleDonationItem from '../../../components/SingleDonationItem/SingleDonationitem';
+import {Routes} from '../../Routes';
 
-const Home = () => {
+const Home = ({navigation}: {navigation: unknown}) => {
   const user = useSelector((state: RootState) => state.user);
 
   const dispatch = useDispatch();
@@ -154,6 +155,8 @@ const Home = () => {
                 <SingleDonationItem
                   onPress={(selectedDonationId: number) => {
                     dispatch(updateSelectedDonationId(selectedDonationId));
+                    // @ts-ignore
+                    navigation.navigate(Routes.SingleDonationItem);
                   }}
                   donationTitle={value.name}
                   uri={value.image}
