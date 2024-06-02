@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BackButton = () => {
-  return null;
+  return;
 };
 
 export default BackButton;
