@@ -5,6 +5,7 @@ import {RootState} from '../../../redux/store';
 import {SafeAreaView, ScrollView} from 'react-native';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import BackButton from '../../../components/BackButton/BackButton';
+import style from './style';
 
 const SingleDonationItem = ({navigation}: {navigation: unknown}) => {
   const donationItemInformation = useSelector(
@@ -12,7 +13,7 @@ const SingleDonationItem = ({navigation}: {navigation: unknown}) => {
   );
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={style.container}>
         {/* @ts-ignore */}
         <BackButton onPress={() => navigation.goBack()} />
       </ScrollView>
