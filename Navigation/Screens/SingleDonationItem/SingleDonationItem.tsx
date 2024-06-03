@@ -1,12 +1,13 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../../redux/store';
-import {Image, SafeAreaView, ScrollView} from 'react-native';
+import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import BackButton from '../../../components/BackButton/BackButton';
 import style from './style';
 import {DonationItem} from '../../../redux/reducers/Donations';
 import Badge from '../../../components/Badge/Badge';
+import Header from '../../../components/Header/Header';
 
 const SingleDonationItem = ({
   navigation,
@@ -32,7 +33,13 @@ const SingleDonationItem = ({
           source={{uri: (donationItemInformation as DonationItem).image}}
           style={style.image}
         />
-        <Badge title={categoryInformation.name} />
+        <View style={style.badge}>
+          <Badge title={categoryInformation.name} />
+        </View>
+        <Header type={1} title={donationItemInformation.name} />
+        <Text style={style.description}>
+          {donationItemInformation.description}
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
