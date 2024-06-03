@@ -6,6 +6,13 @@ const style = StyleSheet.create({
     marginHorizontal: horizontalScale(20),
     marginTop: verticalScale(7),
   },
+  image: {
+    marginTop: verticalScale(12),
+    marginBottom: verticalScale(24),
+    width: '100%',
+    height: verticalScale(240),
+    borderRadius: horizontalScale(5),
+  },
 });
 
 export default style;

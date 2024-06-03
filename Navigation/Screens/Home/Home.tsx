@@ -163,7 +163,7 @@ const Home = ({navigation}: {navigation: unknown}) => {
                       dispatch(updateSelectedDonationId(selectedDonationId));
                       // @ts-ignore
                       navigation.navigate(Routes.SingleDonationItem, {
-                        name: 'Adam',
+                        categoryInformation,
                       });
                     }}
                     donationTitle={value.name}
