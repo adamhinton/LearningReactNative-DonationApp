@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Input />
+        <Input label={'my placeholder'} />
       </ScrollView>
     </SafeAreaView>
   );

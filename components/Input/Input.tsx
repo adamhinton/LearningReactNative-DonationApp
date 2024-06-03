@@ -1,15 +1,20 @@
-import React from 'react';
-import {SafeAreaView, ScrollView, Text} from 'react-native';
-import globalStyle from '../../assets/styles/GlobalStyle';
+import React, {useState} from 'react';
+import {Text, TextInput, View} from 'react-native';
 
-const Input = () => {
+type Props = {
+  label: string;
+};
+
+const Input = (props: Props) => {
+  const {label} = props;
+
+  const [value, setValue] = useState('');
+
   return (
-    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Input />
-        <Text>fdasfsa</Text>
-      </ScrollView>
-    </SafeAreaView>
+    <View>
+      <Text>{label}</Text>
+      <TextInput value={value} onChangeText={val => setValue(val)} />
+    </View>
   );
 };
 
