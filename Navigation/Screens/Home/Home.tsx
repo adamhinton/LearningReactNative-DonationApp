@@ -151,9 +151,9 @@ const Home = ({navigation}: {navigation: unknown}) => {
         {donationItems.length > 0 && (
           <View style={style.donationItemsContainer}>
             {donationItems.map(value => {
-              const categoryInformation = categories.categories.filter(
+              const categoryInformation = categories.categories.find(
                 val => val.categoryId === categories.selectedCategoryId,
-              )[0];
+              )!;
               return (
                 <View
                   key={value.donationItemId}
