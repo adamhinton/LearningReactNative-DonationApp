@@ -43,10 +43,18 @@ const SingleDonationItem = ({
         <Header type={1} title={donationItemInformation.name} />
         <Text style={style.description}>
           {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
+          {donationItemInformation.description} {/* @ts-ignore */}
           {donationItemInformation.description}
         </Text>
       </ScrollView>
-      <View>
+      <View style={style.button}>
         <Button title={'Donate'} />
       </View>
     </SafeAreaView>

@@ -26,6 +26,10 @@ const style = StyleSheet.create({
     fontFamily: 'Inter',
     fontWeight: '400',
     fontSize: scaleFontSize(14),
+    marginBottom: verticalScale(10),
+  },
+  button: {
+    marginHorizontal: horizontalScale(20),
   },
 });
 
