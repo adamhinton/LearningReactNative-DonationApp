@@ -25,7 +25,7 @@ const SingleDonationItem = ({
   const categoryInformation = route.params.categoryInformation;
 
   // @ts-ignore
-  console.log('route:', route.params);
+  // console.log('route:', route.params);
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false} style={style.container}>

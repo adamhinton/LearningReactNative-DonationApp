@@ -40,7 +40,7 @@ const Home = ({navigation}: {navigation: unknown}) => {
 
   const categoryPageSize = 4;
 
-  console.log('donationItems:', donationItems);
+  // console.log('donationItems:', donationItems);
 
   useEffect(() => {
     const items = donations.items.filter(value =>
