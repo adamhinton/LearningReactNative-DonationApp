@@ -8,6 +8,7 @@ import style from './style';
 import {DonationItem} from '../../../redux/reducers/Donations';
 import Badge from '../../../components/Badge/Badge';
 import Header from '../../../components/Header/Header';
+import Button from '../../../components/Button/Button';
 
 const SingleDonationItem = ({
   navigation,
@@ -45,6 +46,9 @@ const SingleDonationItem = ({
           {donationItemInformation.description}
         </Text>
       </ScrollView>
+      <View>
+        <Button title={'Donate'} />
+      </View>
     </SafeAreaView>
   );
 };
