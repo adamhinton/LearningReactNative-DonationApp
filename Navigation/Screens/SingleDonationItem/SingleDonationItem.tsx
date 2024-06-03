@@ -7,10 +7,17 @@ import globalStyle from '../../../assets/styles/GlobalStyle';
 import BackButton from '../../../components/BackButton/BackButton';
 import style from './style';
 
-const SingleDonationItem = ({navigation}: {navigation: unknown}) => {
+const SingleDonationItem = ({
+  navigation,
+  route,
+}: {
+  navigation: unknown;
+  route: unknown;
+}) => {
   const donationItemInformation = useSelector(
     (state: RootState) => state.donations.selectedDonationInformation,
   );
+  console.log('route:', route);
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false} style={style.container}>

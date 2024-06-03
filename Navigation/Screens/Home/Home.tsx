@@ -156,7 +156,9 @@ const Home = ({navigation}: {navigation: unknown}) => {
                   onPress={(selectedDonationId: number) => {
                     dispatch(updateSelectedDonationId(selectedDonationId));
                     // @ts-ignore
-                    navigation.navigate(Routes.SingleDonationItem);
+                    navigation.navigate(Routes.SingleDonationItem, {
+                      name: 'Adam',
+                    });
                   }}
                   donationTitle={value.name}
                   uri={value.image}
