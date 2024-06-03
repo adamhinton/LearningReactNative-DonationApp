@@ -20,8 +20,10 @@ const SingleDonationItem = ({
     (state: RootState) => state.donations.selectedDonationInformation,
   );
 
+  // @ts-ignore
   const categoryInformation = route.params.categoryInformation;
 
+  // @ts-ignore
   console.log('route:', route.params);
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
@@ -36,8 +38,10 @@ const SingleDonationItem = ({
         <View style={style.badge}>
           <Badge title={categoryInformation.name} />
         </View>
+        {/* @ts-ignore */}
         <Header type={1} title={donationItemInformation.name} />
         <Text style={style.description}>
+          {/* @ts-ignore */}
           {donationItemInformation.description}
         </Text>
       </ScrollView>
