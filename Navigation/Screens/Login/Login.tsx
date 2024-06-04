@@ -12,7 +12,12 @@ const Login = () => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={style.container}>
-        <Input label={'Email'} placeholder="Enter your email" />
+        <Input
+          label={'Email'}
+          placeholder="Enter your email"
+          onChangeText={value => setEmail(value)}
+          keyboardType="email-address"
+        />
       </ScrollView>
     </SafeAreaView>
   );

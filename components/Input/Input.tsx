@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
+import {KeyboardTypeOptions, Text, TextInput, View} from 'react-native';
 import style from './style';
 
 type Props = {
   label: string;
   placeholder?: string;
   onChangeText?: (val: string) => void;
+  keyboardType?: KeyboardTypeOptions;
 };
 
 const Input = (props: Props) => {
-  const {label, placeholder, onChangeText} = props;
+  const {label, placeholder, onChangeText, keyboardType} = props;
 
   const [value, setValue] = useState('');
 
@@ -24,6 +25,7 @@ const Input = (props: Props) => {
           setValue(val);
           onChangeText && onChangeText(val);
         }}
+        keyboardType={keyboardType ? keyboardType : 'default'}
       />
     </View>
   );
