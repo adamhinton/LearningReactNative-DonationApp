@@ -10,7 +10,7 @@ const Login = () => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={style.container}>
-        <Input label={'Email'} />
+        <Input label={'Email'} placeholder="Enter your email" />
       </ScrollView>
     </SafeAreaView>
   );

@@ -16,7 +16,7 @@ const Input = (props: Props) => {
     <View>
       <Text style={style.label}>{label}</Text>
       <TextInput
-        placeholder={placeholder && placeholder}
+        placeholder={placeholder ? placeholder : null}
         style={style.input}
         value={value}
         onChangeText={val => setValue(val)}
