@@ -1,19 +1,26 @@
 import React, {useState} from 'react';
 import {Text, TextInput, View} from 'react-native';
+import style from './style';
 
 type Props = {
   label: string;
+  placeholder?: string;
 };
 
 const Input = (props: Props) => {
-  const {label} = props;
+  const {label, placeholder} = props;
 
   const [value, setValue] = useState('');
 
   return (
     <View>
-      <Text>{label}</Text>
-      <TextInput value={value} onChangeText={val => setValue(val)} />
+      <Text style={style.label}>{label}</Text>
+      <TextInput
+        placeholder={placeholder}
+        style={style.input}
+        value={value}
+        onChangeText={val => setValue(val)}
+      />
     </View>
   );
 };
