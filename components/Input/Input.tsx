@@ -5,10 +5,11 @@ import style from './style';
 type Props = {
   label: string;
   placeholder?: string;
+  onChangeText?: (val: string) => void;
 };
 
 const Input = (props: Props) => {
-  const {label, placeholder} = props;
+  const {label, placeholder, onChangeText} = props;
 
   const [value, setValue] = useState('');
 
@@ -16,10 +17,13 @@ const Input = (props: Props) => {
     <View>
       <Text style={style.label}>{label}</Text>
       <TextInput
-        placeholder={placeholder ? placeholder : null}
+        placeholder={placeholder ? placeholder : undefined}
         style={style.input}
         value={value}
-        onChangeText={val => setValue(val)}
+        onChangeText={val => {
+          setValue(val);
+          onChangeText && onChangeText(val);
+        }}
       />
     </View>
   );
