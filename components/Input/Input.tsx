@@ -7,10 +7,12 @@ type Props = {
   placeholder?: string;
   onChangeText?: (val: string) => void;
   keyboardType?: KeyboardTypeOptions;
+  secureTextEntry?: boolean;
 };
 
 const Input = (props: Props) => {
-  const {label, placeholder, onChangeText, keyboardType} = props;
+  const {label, placeholder, onChangeText, keyboardType, secureTextEntry} =
+    props;
 
   const [value, setValue] = useState('');
 
@@ -26,6 +28,7 @@ const Input = (props: Props) => {
           onChangeText && onChangeText(val);
         }}
         keyboardType={keyboardType ? keyboardType : 'default'}
+        secureTextEntry={secureTextEntry ? secureTextEntry : false}
       />
     </View>
   );
