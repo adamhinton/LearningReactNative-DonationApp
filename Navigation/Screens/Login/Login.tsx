@@ -7,8 +7,9 @@ import style from './style';
 import Header from '../../../components/Header/Header';
 import Button from '../../../components/Button/Button';
 import {Routes} from '../../Routes';
+import {HackyNavigation} from '../../../App';
 
-const Login = ({navigation}: {navigation: unknown}) => {
+const Login = ({navigation}: {navigation: HackyNavigation}) => {
   console.log('navigation:', navigation);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

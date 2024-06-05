@@ -19,8 +19,9 @@ import {
 } from '../../../redux/reducers/Donations';
 import SingleDonationItem from '../../../components/SingleDonationItem/SingleDonationitem';
 import {Routes} from '../../Routes';
+import {HackyNavigation} from '../../../App';
 
-const Home = ({navigation}: {navigation: unknown}) => {
+const Home = ({navigation}: {navigation: HackyNavigation}) => {
   const user = useSelector((state: RootState) => state.user);
 
   const dispatch = useDispatch();

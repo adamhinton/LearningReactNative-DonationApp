@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useState} from 'react';
-import {Pressable, SafeAreaView, ScrollView, View} from 'react-native';
+import {SafeAreaView, ScrollView, View} from 'react-native';
 import globalStyle from '../../../assets/styles/GlobalStyle';
 import Input from '../../../components/Input/Input';
 import style from './style';
 import Header from '../../../components/Header/Header';
 import Button from '../../../components/Button/Button';
+import BackButton from '../../../components/BackButton/BackButton';
+import {HackyNavigation} from '../../../App';
 
-const Registration = () => {
+const Registration = ({navigation}: {navigation: HackyNavigation}) => {
   const [email, setEmail] = useState('');
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
 
@@ -16,6 +18,9 @@ const Registration = () => {
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
+      <View>
+        <BackButton onPress={() => navigation.goBack()} />
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={style.container}>
@@ -51,12 +56,9 @@ const Registration = () => {
           />
         </View>
         <View style={globalStyle.marginBotton24}>
-          <Button title={'Login'} />
+          <Button title={'Register'} />
         </View>
         {/* Will build out this link when we have reg page */}
-        <Pressable style={style.registrationButton}>
-          <Header color="#156CF7" type={3} title="Don't have an account?" />
-        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );

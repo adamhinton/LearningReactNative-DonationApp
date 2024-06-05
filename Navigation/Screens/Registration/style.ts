@@ -7,10 +7,6 @@ const style = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-
-  registrationButton: {
-    alignItems: 'center',
-  },
 });
 
 export default style;
