@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useState} from 'react';
 import {Pressable, SafeAreaView, ScrollView, View} from 'react-native';
 import globalStyle from '../../../assets/styles/GlobalStyle';
@@ -7,8 +6,9 @@ import style from './style';
 import Header from '../../../components/Header/Header';
 import Button from '../../../components/Button/Button';
 
-const Login = () => {
+const Registration = () => {
   const [email, setEmail] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [password, setPassword] = useState('');
 
   console.log('email:', email);
@@ -50,4 +50,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registration;
