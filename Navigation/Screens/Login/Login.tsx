@@ -6,8 +6,10 @@ import Input from '../../../components/Input/Input';
 import style from './style';
 import Header from '../../../components/Header/Header';
 import Button from '../../../components/Button/Button';
+import {Routes} from '../../Routes';
 
-const Login = () => {
+const Login = ({navigation}: {navigation}) => {
+  console.log('navigation:', navigation);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -42,7 +44,9 @@ const Login = () => {
           <Button title={'Login'} />
         </View>
         {/* Will build out this link when we have reg page */}
-        <Pressable style={style.registrationButton}>
+        <Pressable
+          style={style.registrationButton}
+          onPress={() => navigation.navigate(Routes.Registration)}>
           <Header color="#156CF7" type={3} title="Don't have an account?" />
         </Pressable>
       </ScrollView>
