@@ -18,7 +18,7 @@ const Registration = ({navigation}: {navigation: HackyNavigation}) => {
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <View>
+      <View style={style.backButton}>
         <BackButton onPress={() => navigation.goBack()} />
       </View>
       <ScrollView
