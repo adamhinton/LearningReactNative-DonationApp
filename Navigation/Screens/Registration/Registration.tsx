@@ -10,6 +10,7 @@ const Registration = () => {
   const [email, setEmail] = useState('');
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [password, setPassword] = useState('');
+  const [fullName, setFullName] = useState('');
 
   console.log('email:', email);
 
@@ -19,8 +20,19 @@ const Registration = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={style.container}>
         <View style={globalStyle.marginBotton24}>
-          <Header type={1} title="Welcome Back" />
+          <Header type={1} title="Hello and Welcome !" />
         </View>
+
+        <View style={globalStyle.marginBotton24}>
+          <Input
+            label={'First & Last Name'}
+            placeholder="Enter your full name"
+            onChangeText={value => setFullName(value)}
+            keyboardType="default"
+            secureTextEntry={false}
+          />
+        </View>
+
         <View style={globalStyle.marginBotton24}>
           <Input
             label={'Email'}

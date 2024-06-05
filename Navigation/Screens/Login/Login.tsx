@@ -8,7 +8,7 @@ import Header from '../../../components/Header/Header';
 import Button from '../../../components/Button/Button';
 import {Routes} from '../../Routes';
 
-const Login = ({navigation}: {navigation}) => {
+const Login = ({navigation}: {navigation: unknown}) => {
   console.log('navigation:', navigation);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,7 +46,7 @@ const Login = ({navigation}: {navigation}) => {
         {/* Will build out this link when we have reg page */}
         <Pressable
           style={style.registrationButton}
-          onPress={() => navigation.navigate(Routes.Registration)}>
+          onPress={() => (navigation as any).navigate(Routes.Registration)}>
           <Header color="#156CF7" type={3} title="Don't have an account?" />
         </Pressable>
       </ScrollView>
