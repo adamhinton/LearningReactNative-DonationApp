@@ -15,6 +15,12 @@ if linkage != nil
 end
 
 target 'DonationApp' do
+  # Note from Adam: In teacher's video it just said `use_frameworks!`. She was looking at the same docs as me but this must be the more recent code.
+    # under "Altering cocoaPods to use frameworks" here:
+    # https://rnfirebase.io/
+  use_frameworks! :linkage => :static
+  # Added by Adam 
+  $RNFirebaseAsStaticFramework = true
   config = use_native_modules!
 
   use_react_native!(
